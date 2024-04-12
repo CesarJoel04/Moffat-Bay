@@ -1,0 +1,125 @@
+# Node modules - Dependency directories
+node_modules/
+
+# Environment configuration files
+.env
+.env.production
+.env.local
+.env.development
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for temporary files
+tmp/
+temp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*.swn
+
+# Build output directories
+/dist
+/build
+/out
+
+# Compiled files
+*.compiled
+*.min.js
+*.map
+*.class
+
+# Package lock files (uncomment if you don't want to include them in your repo)
+# package-lock.json
+# yarn.lock
+
+# Coverage directory used by tools like Istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# Jekyll build output
+_site
+
+# dotenv environment variable files
+.env.test
+
+# Tern project file
+.tern-project
+
+# Stores VSCode versions used for testing and debugging
+.vscode-test
+
+# Store snapshots here
+__snapshots__/
+
+# Log files
+*.log
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+.next/
+.next/static/
+
+# Nuxt.js build output
+.nuxt
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and *not* git gh-pages
+# public
+
+# Vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/

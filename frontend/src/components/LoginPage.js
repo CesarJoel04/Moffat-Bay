@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import '../styles/commonStyles.css'; // Import common CSS styles
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -21,20 +22,24 @@ function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <div>
-        <label>Email</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+    <div className="container">
+      <div className="header">
+        <h2>Login</h2>
       </div>
-      <div>
-        <label>Password</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      </div>
-      <button type="submit">Login</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        
+        <div className="field"> {/* Apply field class */}
+          <label className="label">Email</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input" maxLength="255" required /> {/* Apply input class and set max length */}
+        </div>
+        <div className="field">
+          <label className="label">Password</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" maxLength="255" required />
+        </div>
+        <button type="submit" className="button">Login</button> {/* Apply button class */}
+      </form>
+    </div>
   );
 }
 
 export default LoginPage;
-

@@ -1,0 +1,62 @@
+
+/* Common Styles */
+@import url('./menuStyles.css');
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: left;
+  padding: 50px 0;
+}
+
+.content {
+  flex-grow: 1; /* Allow content to grow to fill remaining space */
+  padding-top: 20px; /* Add padding to create space between menu and content */
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Set Roboto as the font family */
+}
+
+.label {
+  display: block; 
+  margin-bottom: 5px; 
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input.short {
+  max-width: 200px; /* Maximum width for shorter fields */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+

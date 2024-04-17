@@ -30,7 +30,19 @@ function RegistrationPage() {
         <h2>Register</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="field"> {/* Apply field class */}
+        <div className="field">
+          <label className="label">First Name</label>
+          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input" maxLength="100" required />
+        </div>
+        <div className="field">
+          <label className="label">Last Name</label>
+          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input" maxLength="100" required />
+        </div>
+        <div className="field">
+          <label className="label">Telephone</label>
+          <input type="tel" value={telephone} onChange={(e) => setTelephone(e.target.value)} className="input" required />
+        </div>
+        <div className="field"> 
           <label className="label">Email</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input" maxLength="255" required /> {/* Apply input class and set max length */}
         </div>
@@ -38,18 +50,7 @@ function RegistrationPage() {
           <label className="label">Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" maxLength="255" required />
         </div>
-        <div className="field">
-          <label className="label">First Name</label>
-          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input short" maxLength="100" required />
-        </div>
-        <div className="field">
-          <label className="label">Last Name</label>
-          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input short" maxLength="100" required />
-        </div>
-        <div className="field">
-          <label className="label">Telephone</label>
-          <input type="tel" value={telephone} onChange={(e) => setTelephone(e.target.value)} className="input" required />
-        </div>
+
         <button type="submit" className="button">Register</button> {/* Apply button class */}
       </form>
     </div>

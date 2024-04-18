@@ -1,7 +1,6 @@
-// Menu.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/menuStyles.css'; 
+import '../styles/menuStyles.css';
 
 function Menu() {
   return (
@@ -25,7 +24,7 @@ function Menu() {
           </div>
         </div>
         <Link to="/register" className="menu-item">Register</Link>
-        <Link to="/" className="menu-item">About Us</Link>
+        <Link to="/about-us" className="menu-item">About Us</Link> {/* Updated Link */}
         <Link to="/login" className="menu-item">Login</Link>
       </div>
     </div>
@@ -33,3 +32,4 @@ function Menu() {
 }
 
 export default Menu;
+

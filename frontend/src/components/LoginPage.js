@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/commonStyles.css'; // Import common CSS styles
 
 function LoginPage() {
@@ -11,12 +11,12 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Replace with your backend login API endpoint
       const response = await axios.post('http://localhost:3001/login', { email, password });
       console.log('Login successful:', response.data);
-      // Redirect to home/landing page or dashboard after login
-      navigate('/');
+      // Redirect to reservation page after login
+      navigate('/reservation');
     } catch (error) {
+      console.error('Login failed:', error);
       alert('Login failed: Invalid email or password');
     }
   };
@@ -27,16 +27,15 @@ function LoginPage() {
         <h2>Login</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        
-        <div className="field"> {/* Apply field class */}
+        <div className="field">
           <label className="label">Email</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input" maxLength="255" required /> {/* Apply input class and set max length */}
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input" maxLength="255" required />
         </div>
         <div className="field">
           <label className="label">Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" maxLength="255" required />
         </div>
-        <button type="submit" className="button">Login</button> {/* Apply button class */}
+        <button type="submit" className="button">Login</button>
       </form>
     </div>
   );

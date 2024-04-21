@@ -1,14 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/commonStyles.css'; // Import the common CSS file
+import HeroSection from './LandingPageSections/HeroSection.js';
+import RoomsSection from './LandingPageSections/RoomsSection.js';
+import AboutUsSection from './LandingPageSections/AboutUsSection.js';
+import AmenitiesSection from './LandingPageSections/AmenitiesSection.js';
+import FooterSection from './LandingPageSections/FooterSection.js';
 
 function LandingPage() {
+
   return (
-    <div className="container">
-      <div className="header">
-        <h1>Welcome to Moffat Bay Lodge!</h1>
-        <p>Discover your next great adventure.</p>
-      </div>
+    <div class="landing-page-container">
+      <HeroSection/>
+      <RoomsSection/>
+      <AboutUsSection/>
+      <AmenitiesSection/>
+      <FooterSection/>
     </div>
   );
 }

@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import LoginPage from './components/LoginPage';
 import RegistrationPage from './components/RegistrationPage';
-import Menu from './components/menu'; // Import the Menu component
+import Menu from './components/menu'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (

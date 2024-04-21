@@ -1,13 +1,18 @@
-// Menu.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/menuStyles.css'; 
+import '../styles/menu.css'; 
+
 
 function Menu() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="menu">
+    <div className={`menu ${menuOpen ? 'open' : ''}`}>
+      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        &#9776; {/* Hamburger icon */}
+      </div>
       <div className="logo-container">
-        <img src="/Logo512.png" alt="Logo" className="logo" />
+        <img src="/Logo512.png" alt="Logo" className="logo" onError={(e) => {e.target.src = 'placeholder.png'}} />
         <div className="text-container">
           <div>Moffat Bay</div>
           <div>Marina & Lodge</div>

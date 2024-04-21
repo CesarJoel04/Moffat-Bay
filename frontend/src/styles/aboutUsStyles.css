@@ -1,0 +1,46 @@
+
+.ab-grid-wrapper {
+    background-color: #eae6e0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: auto; 
+    padding:15px;
+  }
+  
+  .ab-grid-container {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
+  
+  .ab-grid-container > div {
+    width: 100%; 
+    height: 100%; 
+  }
+  
+  .ab-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+  
+  .ab-paragraph-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    color: #8c8279;
+  }
+  
+  .ab-paragraph-container p {
+    text-align: justify;
+    line-height: 2;
+    font-size: large;
+    letter-spacing: 2px;
+  }
+  

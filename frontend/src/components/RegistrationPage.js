@@ -26,33 +26,44 @@ function RegistrationPage() {
 
   return (
     <div className="container"> 
-      <div className="header">
-        <h2>Register</h2>
+      <div className="form-header">
+        <h2>Register:</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="field">
-          <label className="label">First Name</label>
-          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input" maxLength="100" required />
-        </div>
-        <div className="field">
-          <label className="label">Last Name</label>
-          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className="input" maxLength="100" required />
-        </div>
-        <div className="field">
-          <label className="label">Telephone</label>
-          <input type="tel" value={telephone} onChange={(e) => setTelephone(e.target.value)} className="input" required />
-        </div>
-        <div className="field"> 
-          <label className="label">Email</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input" maxLength="255" required /> {/* Apply input class and set max length */}
-        </div>
-        <div className="field">
-          <label className="label">Password</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" maxLength="255" required />
-        </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="label">First Name</label>
+        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} class="input" maxLength="100" required />
+      </div>
+      <div class="form-group">
+        <label class="label">Last Name</label>
+        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} class="input" maxLength="100" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="label">Email</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} class="input" maxLength="255" required />
+      </div>
+      <div class="form-group">
+        <label class="label">Password</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} class="input" maxLength="255" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+      <label class="label">Telephone</label>
+        <input type="tel" value={telephone} onChange={(e) => setTelephone(e.target.value)} class="input" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+    <button type="submit" class="button">Register</button>
+          </div>
+    </div>
+  </form>
 
-        <button type="submit" className="button">Register</button> {/* Apply button class */}
-      </form>
+
     </div>
   );
 }

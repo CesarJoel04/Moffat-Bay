@@ -7,7 +7,10 @@ function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
+  const buttonStyle = {
+    height: '6vh',
+    width: '10vw',
+};
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,20 +26,27 @@ function LoginPage() {
 
   return (
     <div className="container">
-      <div className="header">
-        <h2>Login</h2>
+      <div className="form-header">
+        <h2>Login:</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        
-        <div className="field"> {/* Apply field class */}
+      <div class="form-row">
+      <div class="form-group"> 
           <label className="label">Email</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input" maxLength="255" required /> {/* Apply input class and set max length */}
         </div>
-        <div className="field">
+        </div>
+        <div class="form-row">
+      <div class="form-group">
           <label className="label">Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" maxLength="255" required />
         </div>
-        <button type="submit" className="button">Login</button> {/* Apply button class */}
+        </div>
+        <div class="form-row">
+      <div class="form-group">
+        <button type="submit" className="button">Login</button>
+        </div>
+        </div>
       </form>
     </div>
   );

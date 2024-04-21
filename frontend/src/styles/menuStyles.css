@@ -2,7 +2,7 @@
   background-color: #fff;
   color: #6e6259;
   padding: 10px 0;
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
   display: flex;
@@ -13,7 +13,7 @@
 }
 
 .menu-items {
-  margin-right: auto;  
+  margin-right: auto;
   flex-wrap: nowrap;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .content {
-  flex-grow: 1; 
-  padding-top: 20px; 
+  flex-grow: 1;
+  padding-top: 20px;
 }
 
 .logo {
@@ -56,17 +56,17 @@
 }
 
 .text-container {
-  margin-left: 10px; 
+  margin-left: 10px;
   font-size: 20px;
   font-weight: bold;
 }
 
 .text-container > div {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .submenu {
-  position: relative; 
+  position: relative;
   text-decoration: none;
 
   line-height: 40px;
@@ -108,7 +108,9 @@
 
 @media screen and (max-width: 600px) {
   .menu-items {
-    display: ${menuOpen ? 'flex' : 'none'}; /* Update here */
+    display: $ {
+      menuopen? 'flex' : "none";
+    } /* Update here */
     flex-direction: column;
     align-items: flex-start;
     width: 100%;

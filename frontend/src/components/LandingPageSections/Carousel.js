@@ -3,7 +3,7 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 import "../../styles/carousel.css";
 
- const Carousel = ({ data }) => {
+const Carousel = ({ data }) => {
   const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {

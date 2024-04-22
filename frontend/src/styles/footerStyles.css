@@ -1,0 +1,53 @@
+.footer-wrapper {
+  background-color: #6e6259; /* Set the background color */
+  color: #fdfdfd;
+  display: flex;
+  padding: 10px;
+  letter-spacing: 2px;
+}
+
+.footer-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+}
+.item {
+  padding: 20px;
+  text-align: center;
+  font-size: large;
+  align-items: center;
+}
+.combined {
+  grid-column: span 3; /* This will span three columns */
+}
+
+.footer-menu {
+  padding: 10px;
+}
+
+.footer-menu-item {
+  display: block;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-menu-item a {
+  text-decoration: none;
+  color: #fdfdfd;
+}
+
+.left-aligned .footer-menu {
+  text-align: left;
+}
+
+/* For the right-aligned footer menu */
+.right-aligned .footer-menu {
+  text-align: right;
+}
+
+.ft-bold-label {
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+}

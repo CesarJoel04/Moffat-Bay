@@ -1,6 +1,6 @@
 .menu {
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #6e6259;
   padding: 10px 0;
   position: relative;
   width: 100%;
@@ -9,20 +9,22 @@
   justify-content: flex-start;
   align-items: center;
   margin-left: auto;
+  z-index: 1000;
 }
 
 .menu-items {
-  margin-right: auto;  
+  margin-right: auto;
   flex-wrap: nowrap;
 }
 
 .menu-item {
-  color: #fff;
+  color: #6e6259;
   text-decoration: none;
   margin: 0 30px;
   line-height: 40px;
+  font-family: roboto;
   font-size: 18px;
-  font-weight: lighter;
+  font-weight: normal;
   position: relative;
 }
 
@@ -36,8 +38,8 @@
 }
 
 .content {
-  flex-grow: 1; 
-  padding-top: 20px; 
+  flex-grow: 1;
+  padding-top: 20px;
 }
 
 .logo {
@@ -47,24 +49,26 @@
 }
 
 .logo-container {
+  width: 20%;
   display: flex;
   align-items: center;
   margin-right: auto;
 }
 
 .text-container {
-  margin-left: 10px; 
+  margin-left: 10px;
   font-size: 20px;
   font-weight: bold;
 }
 
 .text-container > div {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .submenu {
-  position: relative; 
+  position: relative;
   text-decoration: none;
+
   line-height: 40px;
   font-size: 18px;
   font-weight: lighter;
@@ -74,6 +78,7 @@
 .submenu-items {
   display: none;
   position: absolute;
+  margin: 0 30px;
   top: 100%;
   left: 0;
   background-color: #333;
@@ -97,4 +102,21 @@
 .submenu-item:hover {
   text-decoration: underline;
   display: block;
+}
+
+/* #b6ada5; */
+
+@media screen and (max-width: 600px) {
+  .menu-items {
+    display: $ {
+      menuopen?'flex': "none";
+    } /* Update here */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }

@@ -35,7 +35,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0 1rem 0;
-  background-color: #f8f9fa;
+  background-color: #eceff1;
+  letter-spacing: 2px;
 }
 
 .form-row {
@@ -163,4 +164,53 @@ body {
 }
 .main-content {
   padding-top: 60px; /* Adjust this value to the height of your menu */
+}
+
+.select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  color: #8c8279;
+}
+
+/* Style for the options in the dropdown */
+.select option {
+  background-color: #fff;
+  color: #8c8279;
+  letter-spacing: 2px;
+  height: 40px;
+}
+
+/* Style for the date picker input element */
+.date-picker-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #8c8279;
+}
+
+.date-picker-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.numeric-textbox {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 5rem;
+  font-size: 16px;
+  color: #8c8279;
+}
+
+.numeric-textbox:focus {
+  outline: none;
+  color: #8c8279;
 }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/commonStyles.css"; // Import common CSS styles
+import "../styles/commonStyles.css";
+
 
 function RegistrationPage() {
   const [email, setEmail] = useState("");
@@ -30,10 +31,10 @@ function RegistrationPage() {
     }
   };
 
-  return (
+return (
     <div className="container">
       <div className="form-header">
-        <h2>Register:</h2>
+        <h2>Register</h2>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form-row">

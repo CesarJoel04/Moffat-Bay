@@ -37,46 +37,46 @@ function RoomsSection() {
         <div className="room-card">
           <img src="./King4.jpeg" alt="Image" />
           <div className="label">King Bed</div>
-          <div className="description">1-2 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
         <div className="room-card">
           <img src="./King3.jpeg" alt="Image" />
           <div className="label">King Bed</div>
-          <div className="description">1-2 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
         <div className="room-card">
           <img src="./Queen1.jpeg" alt="Image" />
           <div className="label">Queen Bed</div>
-          <div className="description">1-2 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
         <div className="room-card">
           <img src="./Queen1a.jpeg" alt="Image" />
           <div className="label">Queen Bed</div>
-          <div className="description">1-2 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
         <div className="room-card">
           <img src="./2Queen.jpeg" alt="Image" />
           <div className="label">Double Queen Beds</div>
-          <div className="description">1-4 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
         <div className="room-card">
           <img src="./2Queen1.jpeg" alt="Image" />
           <div className="label">Double Queen Beds</div>
-          <div className="description">1-4 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
         <div className="room-card">
           <img src="./DoubleBed.jpeg" alt="Image" />
           <div className="label">Double Beds</div>
-          <div className="description">1-4 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
         <div className="room-card">
           <img src="./DoubleBed1.jpeg" alt="Image" />
           <div className="label">Double Beds</div>
-          <div className="description">1-4 Guests</div>
+          <div className="description">1-5 Guests</div>
         </div>
       </div>
       <div className="btn-container">
-        <Link to="/destination-page" className="cta-button" style={buttonStyle}>
+        <Link to="/reservation" className="cta-button" style={buttonStyle}>
           View Our Rooms
         </Link>
       </div>

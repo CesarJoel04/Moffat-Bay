@@ -2,18 +2,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../styles/commonStyles.css";
+import "../styles/reservationStyles.css";
+import FooterSection from "./LandingPageSections/FooterSection.js";
 
-function ReservationPage() {
+function ReservationPageBody() {
   const [roomSize, setRoomSize] = useState("");
   const [guests, setGuests] = useState("");
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const navigate = useNavigate();
-  console.log("Here1");
+
   const handleSubmit = async (e) => {
-    console.log("Here2");
     e.preventDefault();
-    console.log("Here3");
 
     if (!roomSize || !guests || !checkInDate || !checkOutDate) {
       alert("Please fill in all fields.");
@@ -53,14 +54,14 @@ function ReservationPage() {
   return (
     <div className="container">
       <div className="form-header">
-        <h2>Reservation:</h2>
+        <h2>Reservation</h2>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-group">
             <label className="label">Check-In Date:</label>
             <input
-              className="input"
+              className="date-picker-input"
               type="date"
               value={checkInDate}
               onChange={(e) => setCheckInDate(e.target.value)}
@@ -69,7 +70,7 @@ function ReservationPage() {
           <div className="form-group">
             <label className="label">Check-Out Date:</label>
             <input
-              className="input"
+              className="date-picker-input"
               type="date"
               value={checkOutDate}
               onChange={(e) => setCheckOutDate(e.target.value)}
@@ -80,7 +81,7 @@ function ReservationPage() {
           <div className="form-group">
             <label className="label">Room Type</label>
             <select
-              className="input"
+              className="select"
               value={roomSize}
               onChange={(e) => setRoomSize(e.target.value)}
             >
@@ -93,7 +94,7 @@ function ReservationPage() {
           <div className="form-group">
             <label className="label">Number of Guests:</label>
             <input
-              className="input"
+              className="numeric-textbox"
               type="number"
               value={guests}
               onChange={(e) => setGuests(e.target.value)}
@@ -110,8 +111,96 @@ function ReservationPage() {
           </div>
         </div>
       </form>
+      <div className="blank-space"></div>
+      <div className="room-reservation-container">
+        <div className="header">
+          <h2 className="bold-label">Choose Your Perfect Space</h2>
+          <p>
+            At Moffat Bay Marina & Lodge, our luxurious accommodation offers a
+            welcoming retreat after a day on the water. We can provide the
+            perfect space for your stay. Wake up to breathtaking sunrises over
+            the bay, unwind under a starlit sky, or prepare yourself for a new
+            adventure. Our staff is ready to pamper and serve you today! Begin
+            your reservation by searching all available rooms with the form
+            above, or choose your perfect space from our rooms below.
+          </p>
+          <div className="blank-space"></div>
+        </div>
+        <div className="rooms-gallery">
+          <div className="rooms-container">
+            <img src="./King4.jpeg" alt="Image 1" />
+            <div className="room-text-container">
+              <div className="left-aligned">
+                <p>1-5 Guests</p>
+                <h4>King Bed</h4>
+              </div>
+              <div className="middle-aligned">
+                <p>
+                  The King Bed room, with additional foldouts available, ensures
+                  a regal experience with a luxurious king-size bed.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="rooms-container">
+            <img src="./Queen1.jpeg" alt="Image 1" />
+            <div className="room-text-container">
+              <div className="left-aligned">
+                <p>1-5 Guests</p>
+                <h4>Queen Bed</h4>
+              </div>
+              <div className="middle-aligned">
+                <p>
+                  Our Queen Bed room, with additional foldouts available,
+                  provides a cozy space for a tranquil retreat.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="rooms-container">
+            <img src="./DoubleBed.jpeg" alt="Image 1" />
+            <div className="room-text-container">
+              <div className="left-aligned">
+                <p>1-5 Guests</p>
+                <h4>Double Bed</h4>
+              </div>
+              <div className="middle-aligned">
+                <p>
+                  The Double Full Beds room is a perfect for retreat, featuring
+                  two full-size beds (additional foldouts available if needed)
+                  for a comfortable night's rest.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="rooms-container">
+            <img src="./2Queen.jpeg" alt="Image 1" />
+            <div className="room-text-container">
+              <div className="left-aligned">
+                <p>1-5 Guests</p>
+                <h4>Double Queen Bed</h4>
+              </div>
+              <div className="middle-aligned">
+                <p>
+                  The Double Queen Beds room accommodates 1-5 guests and offers
+                  a spacious stay with two queen-size beds, and optional
+                  foldouts if needed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
+function ReservationPage() {
+  return (
+    <div>
+      <ReservationPageBody/>
+      <FooterSection/>
+    </div>
+  );
+}
 export default ReservationPage;

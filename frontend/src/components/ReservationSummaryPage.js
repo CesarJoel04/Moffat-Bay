@@ -30,6 +30,8 @@ function ReservationSummaryPage() {
     } catch (error) {
       alert('Failed to cancel reservation:', error.response.data);
     }
+
+    
   };
 
   return (

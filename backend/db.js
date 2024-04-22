@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-  host: '127.0.0.1', // Use the IP address as mentioned in your MySQL Workbench details
+  host: 'localhost', // Use the IP address as mentioned in your MySQL Workbench details
   user: 'root', // Username remains the same
   password: 'Joel@2024', // Assuming the password provided is correct
   database: 'moffat_bay_lodge_db', // Ensure this matches the exact name of your database

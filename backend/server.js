@@ -120,6 +120,26 @@ app.delete('/cancel-reservation', (req, res) => {
   )
 })
 
+//Look up reservation endpoint
+app.get('/reservations/:customerId/:reservationId', (req, res) => {
+  const { customerId, reservationId } = req.params;
+
+  db.query(
+    'SELECT * FROM reservations WHERE customer_id = ? AND reservation_id = ?',
+    [customerId, reservationId],
+    (error, results) => {
+      if (error) {
+        console.error('Error executing query:', error);
+        return res.status(500).send('Error retrieving reservation');
+      }
+      if (results.length === 0) {
+        return res.status(404).send('Reservation not found');
+      }
+      return res.status(200).json(results[0]);
+    }
+  );
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })

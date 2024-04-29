@@ -7,8 +7,10 @@ import Menu from "./components/menu";
 import ReservationPage from "./components/ReservationPage";
 import ReservationSummaryPage from "./components/ReservationSummaryPage";
 import AboutUsPage from "./components/AboutUsPage"; // Import the new component
-import ContactUsPage from "./components/ContactUsPage"; // Import the Contact Us page component
+import ReservationLookUpPage from "./components/ReservationLookUpPage"; // Import the Reservation LookUp Page component
+// import ContactUsPage from "./components/ContactUsPage"; Import the Contact Us page component
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/reservation-summary" element={<ReservationSummaryPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/contact-us" element={<ContactUsPage />} /> {/* New route for Contact Us page */}
+          <Route path="/reservation-lookup" element={<ReservationLookUpPage />} /> {/* New route for the Reservation LookUp Page */}
+          {/* <Route path="/contact-us" element={<ContactUsPage />} /> New route for Contact Us page */}
+          
         </Routes>
       </div>
     </Router>

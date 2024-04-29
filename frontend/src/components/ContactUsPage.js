@@ -1,4 +1,4 @@
-// ContactUsPage.js
+/* ContactUsPage.js                Important change: "Client requested deleting Contact Us Page"
 import React from "react";
 
 
@@ -17,3 +17,4 @@ function ContactUsPage() {
 }
 
 export default ContactUsPage;
+*/

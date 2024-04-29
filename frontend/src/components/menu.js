@@ -38,7 +38,7 @@ function Menu() {
         </div>
         <Link to="/register" className="menu-item">Register</Link>
         <Link to="/about-us" className="menu-item">About Us</Link>
-        <Link to="/contact-us" className="menu-item">Contact Us</Link> {/* New Link for Contact Us page */}
+        {/*<Link to="/contact-us" className="menu-item">Contact Us</Link>  New Link for Contact Us page - Client requested deleting Contact Us Page*/}
         <Link to="/login" className="menu-item">Login</Link>
       </div>
     </div>

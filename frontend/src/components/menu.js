@@ -27,9 +27,9 @@ function Menu() {
       </div>
       <div className="menu-items">
         <Link to="/" className="menu-item">Home</Link>
-        <Link to="/attractions" className="menu-item">Attractions</Link> {/* Assuming you have an attractions page */}
+        <Link to="/attractions" className="menu-item">Attractions</Link>
         <div className="submenu">
-          <Link to="#" className="menu-item">My Reservations</Link> {/* Changed to # if it doesn't navigate */}
+          <Link to="#" className="menu-item">My Reservations</Link>
           <div className="submenu-items">
             <Link to="/reservation" className="submenu-item">Reservation</Link>
             <Link to="/reservation-summary" className="submenu-item">Summary</Link>

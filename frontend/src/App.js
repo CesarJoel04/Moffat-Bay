@@ -6,9 +6,9 @@ import RegistrationPage from "./components/RegistrationPage";
 import Menu from "./components/menu";
 import ReservationPage from "./components/ReservationPage";
 import ReservationSummaryPage from "./components/ReservationSummaryPage";
-import AboutUsPage from "./components/AboutUsPage"; // Import the new component
-import ReservationLookUpPage from "./components/ReservationLookUpPage"; // Import the Reservation LookUp Page component
-// import ContactUsPage from "./components/ContactUsPage"; Import the Contact Us page component
+import AboutUsPage from "./components/AboutUsPage"; 
+import ReservationLookUpPage from "./components/ReservationLookUpPage";
+import AttractionsPage from "./components/AttractionsPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -19,14 +19,13 @@ function App() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/attractions" element={<AttractionsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/reservation-summary" element={<ReservationSummaryPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/reservation-lookup" element={<ReservationLookUpPage />} /> {/* New route for the Reservation LookUp Page */}
-          {/* <Route path="/contact-us" element={<ContactUsPage />} /> New route for Contact Us page */}
-          
+          <Route path="/reservation-lookup" element={<ReservationLookUpPage />} /> 
         </Routes>
       </div>
     </Router>

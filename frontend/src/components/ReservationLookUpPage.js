@@ -5,7 +5,7 @@ import axios from "axios";
 import "../styles/commonStyles.css";
 
 function ReservationLookupPage() {
-  const [customerId, setCustomerId] = useState("");
+  const [email, setCustomerEmail] = useState("");
   const [reservationId, setReservationId] = useState("");
   const [reservationDetails, setReservationDetails] = useState(null);
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function ReservationLookupPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:3001/reservations/${customerId}/${reservationId}`);
+      const response = await axios.get(`http://localhost:3001/reservations/${email}/${reservationId}`);
       setReservationDetails(response.data); // Store the reservation data in state
     } catch (error) {
       alert("Failed to retrieve reservation: Please try again");
@@ -28,11 +28,12 @@ function ReservationLookupPage() {
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-group">
-            <label className="label">Customer ID</label>
+            <label className="label">Customer Email</label>
             <input
               type="text"
-              value={customerId}
-              onChange={(e) => setCustomerId(e.target.value)}
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setCustomerEmail(e.target.value)}
               className="input"
               required
             />
@@ -41,6 +42,7 @@ function ReservationLookupPage() {
             <label className="label">Reservation ID</label>
             <input
               type="text"
+              placeholder="Reservation ID"
               value={reservationId}
               onChange={(e) => setReservationId(e.target.value)}
               className="input"
@@ -59,10 +61,10 @@ function ReservationLookupPage() {
       {reservationDetails && (
         <div className="reservation-details">
           <h3>Reservation Summary</h3>
-          <p><strong>Room Size:</strong> {reservationDetails.roomSize}</p>
-          <p><strong>Number of Guests:</strong> {reservationDetails.numberOfGuests}</p>
-          <p><strong>Check-In:</strong> {reservationDetails.checkIn}</p>
-          <p><strong>Check-Out:</strong> {reservationDetails.checkOut}</p>
+          <p><strong>Room Size:</strong> {reservationDetails.RoomSize.toUpperCase()}</p>
+          <p><strong>Number of Guests:</strong> {reservationDetails.NoOfGuests}</p>
+          <p><strong>Check-In:</strong> {new Date(reservationDetails.checkinDate).toLocaleDateString()}</p>
+          <p><strong>Check-Out:</strong> {new Date(reservationDetails.checkOutDate).toLocaleDateString()}</p>
         </div>
       )}
     </div>

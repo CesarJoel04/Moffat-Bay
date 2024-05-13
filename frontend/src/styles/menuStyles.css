@@ -68,8 +68,7 @@
 .submenu {
   position: relative;
   text-decoration: none;
-
-  line-height: 40px;
+  line-height: 30px;
   font-size: 18px;
   font-weight: lighter;
   display: inline-block;

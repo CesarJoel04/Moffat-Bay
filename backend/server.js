@@ -120,22 +120,68 @@ app.delete('/cancel-reservation', (req, res) => {
   )
 })
 
-//Look up reservation endpoint
-app.get('/reservations/:customerId/:reservationId', (req, res) => {
-  const { customerId, reservationId } = req.params;
+
+
+// Look up reservation endpoint
+app.post('/reservations', (req, res) => {
+  const { customerEmail, reservationId } = req.body;
+
+  let whereClause = ''; // Initialize the WHERE clause
+
+  if (customerEmail && reservationId) {
+    // If both email and reservation_id are provided
+    whereClause = 'WHERE c.email = ? AND rs.reservation_id = ?';
+  } else if (customerEmail) {
+    // If only email is provided
+    whereClause = 'WHERE c.email = ?';
+  } else if (reservationId) {
+    // If only reservation_id is provided
+    whereClause = 'WHERE rs.reservation_id = ?';
+  } else {
+    // If neither email nor reservation_id is provided, throw an error
+    return res.status(400).send('Please provide either customer email or reservation ID');
+  }
 
   db.query(
-    'SELECT * FROM reservations WHERE customer_id = ? AND reservation_id = ?',
-    [customerId, reservationId],
+    `SELECT 
+      c.first_name AS FirstName,
+      c.last_name AS LastName,
+      DATE_FORMAT(rs.check_in_date, '%Y-%m-%d') AS checkinDate,
+      DATE_FORMAT(rs.check_out_date, '%Y-%m-%d') AS checkOutDate,
+      DATE_FORMAT(rs.booking_date, '%Y-%m-%d') AS bookingDate,
+      r.room_size AS RoomSize,
+      rs.number_of_guests AS NoOfGuests,
+      DATEDIFF(rs.check_out_date, rs.check_in_date) AS NumberOfDays,
+      gp.price_per_night * rs.number_of_guests * DATEDIFF(rs.check_out_date, rs.check_in_date) AS TotalPrice
+    FROM 
+      customers c 
+    INNER JOIN 
+      reservations rs ON c.customer_id = rs.customer_id
+    LEFT JOIN 
+      rooms r ON r.room_id = rs.room_id
+    LEFT JOIN 
+      guestpricing gp ON rs.number_of_guests BETWEEN gp.min_guests AND gp.max_guests
+    ${whereClause}`,
+    customerEmail && reservationId ? [customerEmail, reservationId] : // Pass both parameters if both are provided
+      customerEmail ? [customerEmail] : // Pass email parameter if only email is provided
+      reservationId ? [reservationId] : [], // Pass reservation_id parameter if only reservation_id is provided
     (error, results) => {
       if (error) {
         console.error('Error executing query:', error);
         return res.status(500).send('Error retrieving reservation');
       }
       if (results.length === 0) {
-        return res.status(404).send('Reservation not found');
+        // No reservations found, send empty array as response
+        return res.status(200).json([]);
       }
-      return res.status(200).json(results[0]);
+      // Format dates properly before sending the response
+      const formattedResults = results.map(result => ({
+        ...result,
+        checkinDate: new Date(result.checkinDate).toLocaleDateString(),
+        checkOutDate: new Date(result.checkOutDate).toLocaleDateString(),
+        bookingDate: new Date(result.bookingDate).toLocaleDateString(),
+      }));
+      return res.status(200).json(formattedResults);
     }
   );
 });

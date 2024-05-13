@@ -2,6 +2,8 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
+import "../styles/commonStyles.css";
+import "../styles/reservationSummary.css";
 
 function ReservationSummaryPage() {
   const navigate = useNavigate();
@@ -33,22 +35,34 @@ function ReservationSummaryPage() {
   };
 
   return (
-    <div className="reservation-summary">
+    <div className="container">
+      <div className="form-header">
       <h1>Reservation Summary</h1>
-      <p>
-        <strong>Room Size:</strong> {reservation.roomSize}
-      </p>
-      <p>
-        <strong>Number of Guests:</strong> {reservation.number_of_guests}
-      </p>
-      <p>
-        <strong>Check-In Date:</strong> {reservation.check_in_date}
-      </p>
-      <p>
-        <strong>Check-Out Date:</strong> {reservation.check_out_date}
-      </p>
-      <button onClick={handleSubmit}>Submit Reservation</button>
-      <button onClick={handleCancel}>Cancel Reservation</button>
+      </div>
+      <div className="form-row">
+          <div className="form-group">
+            <label className="reservationLabel">Room Size:</label>
+            <label className="reservationData">{reservation.roomSize}</label>
+          </div>
+          <div className="form-group">
+            <label className="reservationLabel">Number of Guests:</label>
+            <label className="reservationData">{reservation.number_of_guests}</label>
+          </div>
+      </div>
+      <div className="form-row">
+          <div className="form-group">
+            <label className="reservationLabel">Check-In Date:</label>
+            <label className="reservationData">{reservation.check_in_date}</label>
+          </div>
+          <div className="form-group">
+            <label className="reservationLabel">Check-Out Date:</label>
+            <label className="reservationData">{reservation.check_out_date}</label>
+          </div>
+      </div>
+      <div className="button-row">
+          <button className="button" onClick={handleSubmit}>Submit Reservation</button>
+          <button className="button" onClick={handleCancel}>Cancel Reservation</button>
+      </div>
     </div>
   );
 }

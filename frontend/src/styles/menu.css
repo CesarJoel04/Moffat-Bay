@@ -84,7 +84,7 @@
 .submenu-items {
   display: none;
   position: absolute;
-  margin: 0 30px;
+  margin: 0 20px;
   top: 100%;
   left: 0;
   background-color: #8c8279;
@@ -94,6 +94,7 @@
 .submenu:hover .submenu-items {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .submenu-item {

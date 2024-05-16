@@ -87,8 +87,3 @@
 .right-aligned {
   align-self: flex-end;
 }
-
-.reservation-summary {
- margin-top: 75px;
- margin-left: 20px;
-}

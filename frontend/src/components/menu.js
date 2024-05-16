@@ -32,8 +32,7 @@ function Menu() {
           <Link to="#" className="menu-item">My Reservations</Link>
           <div className="submenu-items">
             <Link to="/reservation" className="submenu-item">Reservation</Link>
-          {/*<Link to="/reservation-summary" className="submenu-item">Summary</Link> 
-          Reservation-summary link is only access after a user places a reservation where they can confirm of cancel*/}
+            <Link to="/reservation-summary" className="submenu-item">Summary</Link>
             <Link to="/reservation-lookup" className="submenu-item">Lookup</Link>
           </div>
         </div>

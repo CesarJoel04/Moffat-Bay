@@ -32,13 +32,11 @@ function Menu() {
           <Link to="#" className="menu-item">My Reservations</Link>
           <div className="submenu-items">
             <Link to="/reservation" className="submenu-item">Reservation</Link>
-            <Link to="/reservation-summary" className="submenu-item">Summary</Link>
             <Link to="/reservation-lookup" className="submenu-item">Lookup</Link>
           </div>
         </div>
         <Link to="/register" className="menu-item">Register</Link>
         <Link to="/about-us" className="menu-item">About Us</Link>
-        {/*<Link to="/contact-us" className="menu-item">Contact Us</Link>  New Link for Contact Us page - Client requested deleting Contact Us Page*/}
         <Link to="/login" className="menu-item">Login</Link>
       </div>
     </div>

@@ -152,7 +152,7 @@ app.post('/reservations', (req, res) => {
       r.room_size AS RoomSize,
       rs.number_of_guests AS NoOfGuests,
       DATEDIFF(rs.check_out_date, rs.check_in_date) AS NumberOfDays,
-      gp.price_per_night * rs.number_of_guests * DATEDIFF(rs.check_out_date, rs.check_in_date) AS TotalPrice
+      rs.total_reservation_cost AS TotalPrice
     FROM 
       customers c 
     INNER JOIN 

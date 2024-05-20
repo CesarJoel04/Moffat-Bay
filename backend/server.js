@@ -57,12 +57,13 @@ app.post('/reserve', (req, res) => {
     check_in_date,
     check_out_date,
     number_of_guests,
+    total_cost,
   } = req.body
   const query =
     'INSERT INTO Reservations (customer_id, room_id, check_in_date, check_out_date, number_of_guests, total_reservation_cost) VALUES (?, ?, ?, ?, ?, ?)'
 
-  let total_cost = 0
-  const price_per_night = number_of_guests <= 2 ? 115.0 : 150.0
+  
+  const price_per_night = number_of_guests <= 2 ? 120.75 : 157.50
   const days =
     (new Date(check_out_date) - new Date(check_in_date)) / (1000 * 3600 * 24)
   total_cost = days * price_per_night
